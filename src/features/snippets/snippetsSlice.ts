@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import ApiService from '../../common/services';
+import { Status } from '../../common/constants';
 
 export const getAllSnippets = createAsyncThunk('snippets/get', async () => {
   const res = await ApiService.getAllSnippets();
@@ -9,7 +10,7 @@ export const getAllSnippets = createAsyncThunk('snippets/get', async () => {
 });
 
 const initialState = {
-  status: 'idle',
+  status: Status.Idle,
   data: [],
   error: null,
 };
@@ -18,8 +19,16 @@ const snippetsSlice = createSlice({
   name: 'snippets',
   initialState,
   extraReducers(builder) {
-    builder.addCase(getAllSnippets.pending, (state) => {
-      state.status = 'loading';
-    });
+    builder
+      .addCase(getAllSnippets.pending, (state) => {
+        state.status = Status.Loading;
+      })
+      .addCase(getAllSnippets.fulfilled, (state, action) => {
+        state.status = Status.Success;
+        state.data = action.payload;
+      });
   },
+  reducers: {},
 });
+
+export default snippetsSlice.reducer;
