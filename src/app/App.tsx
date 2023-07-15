@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Snippets from './pages/Snippets';
-import Contributors from './pages/Contributors';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Footer from './components/Footer';
+import Navbar from '../common/components/Navbar';
+import Home from '../pages/Home';
+import Snippets from '../pages/Snippets';
+import Contributors from '../pages/Contributors';
+import About from '../features/about/About';
+import Contact from '../features/contact/Contact';
+import Footer from '../common/components/Footer';
 
 function App() {
   return (
