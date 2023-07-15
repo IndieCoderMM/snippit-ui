@@ -27,9 +27,9 @@
 
 # 💻 About Snippit
 
-`Community-driven code sharing platform`
+`Community-driven code-sharing platform`
 
-> This is the front-end codebase for Snippit. The back-end repository can be at [PrantoshB/Snippit](https://github.com/PrantoshB/Snippit).
+> This is the front-end codebase for Snippit. The back-end repository can be found at [PrantoshB/Snippit](https://github.com/PrantoshB/Snippit).
 
 
 **Snippit** is an open-source code sharing website that allows developers to share code snippets, receive feedback, and collaborate with others. It aims to provide a platform for the community to learn, inspire, and improve their coding skills.
@@ -69,7 +69,7 @@ cd my-project
 git clone git@github.com:IndieCoderMM/snippit-ui.git .
 ```
 
-2. Intall the dependencies:
+2. Install the dependencies:
 
 ```sh
 npm install
