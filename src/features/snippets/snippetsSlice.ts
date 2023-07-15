@@ -1,19 +1,26 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import ApiService from '../../common/services';
 import { Status } from '../../common/constants';
+import { Snippet } from '../../common.types';
+
+interface SnippetState {
+  status: Status;
+  data: Snippet[];
+  error: string;
+}
+
+const initialState: SnippetState = {
+  status: Status.Idle,
+  data: [],
+  error: '',
+};
 
 export const getAllSnippets = createAsyncThunk('snippets/get', async () => {
   const res = await ApiService.getAllSnippets();
-  const data = res.data.results;
+  const data = res.data;
 
   return data;
 });
-
-const initialState = {
-  status: Status.Idle,
-  data: [],
-  error: null,
-};
 
 const snippetsSlice = createSlice({
   name: 'snippets',
