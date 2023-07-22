@@ -80,7 +80,7 @@ npm install
 Create a `.env.local` file in the root directory and add your API endpoint URL:
 
 ```sh
-VITE_API_URL=http://localhost:3000/api/v1
+VITE_API_URL=http://localhost:3000/api/v1/
 ```
 
 ### 💻 Usage
