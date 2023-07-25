@@ -7,18 +7,22 @@ import SnippetsFeed from '../pages/SnippetsFeed';
 import Contributors from '../pages/Contributors';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import Sidebar from '../common/components/Sidebar';
 
 function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/snippets" element={<SnippetsFeed />} />
-        <Route path="/contributors" element={<Contributors />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <main className="flex mt-20">
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/snippets" element={<SnippetsFeed />} />
+          <Route path="/contributors" element={<Contributors />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );

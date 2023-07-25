@@ -27,13 +27,11 @@ const SnippetsFeed = () => {
   // }
 
   return (
-    <main className="grid">
-      <div className="grid gap-5 max-w-xl mx-auto py-10">
-        {sampleSnippets.map((item) => (
-          <SnippetCard key={item.id} {...item} />
-        ))}
-      </div>
-    </main>
+    <div className="grid gap-5 max-w-xl mx-auto py-10">
+      {sampleSnippets.map((item) => (
+        <SnippetCard key={item.id} {...item} />
+      ))}
+    </div>
   );
 };
 
