@@ -7,85 +7,85 @@ import {
   BookmarkIcon,
   InboxIcon,
   UsersIcon,
-  ArrowLeftOnRectangleIcon,
   PencilSquareIcon,
   ArrowLeftCircleIcon,
 } from '@heroicons/react/24/solid';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <aside
-      className="fixed top-16 left-0 bottom-0 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      className="fixed left-0 top-16 z-20 h-screen w-56 -translate-x-full transition-transform sm:translate-x-0"
       aria-label="Sidebar"
     >
-      <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+      <div className="h-full overflow-y-auto bg-white px-3 py-4">
         <ul className="space-y-2 font-medium">
           <li>
-            <a href="#" className="sideMenuItem">
-              <HomeIcon className="w-6 h-6" />
+            <NavLink to="/" className="sideMenuItem">
+              <HomeIcon className="h-6 w-6" />
               <span className="ml-3">My Feed</span>
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a href="#" className="sideMenuItem">
-              <BookmarkIcon className="w-6 h-6" />
-              <span className="flex-1 ml-3 whitespace-nowrap">Bookmarks</span>
-            </a>
+            <NavLink to="/bookmarks" className="sideMenuItem">
+              <BookmarkIcon className="h-6 w-6" />
+              <span className="ml-3 flex-1 whitespace-nowrap">Bookmarks</span>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="sideMenuItem">
-              <UsersIcon className="w-6 h-6" />
-              <span className="flex-1 ml-3 whitespace-nowrap">
+            <NavLink to="/contributors" className="sideMenuItem">
+              <UsersIcon className="h-6 w-6" />
+              <span className="ml-3 flex-1 whitespace-nowrap">
                 Contributors
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="sideMenuItem">
-              <FireIcon className="w-6 h-6" />
-              <span className="flex-1 ml-3 whitespace-nowrap">
+            <NavLink to="/popular_posts" className="sideMenuItem">
+              <FireIcon className="h-6 w-6" />
+              <span className="ml-3 flex-1 whitespace-nowrap">
                 Popular Posts
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="sideMenuItem">
-              <InboxIcon className="w-6 h-6" />
-              <span className="flex-1 ml-3 whitespace-nowrap">Inbox</span>
-              <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
+            <NavLink to="/inbox" className="sideMenuItem">
+              <InboxIcon className="h-6 w-6" />
+              <span className="ml-3 flex-1 whitespace-nowrap">Inbox</span>
+              <span className="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-blue-100 p-3 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
                 3
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
             <Disclosure>
               <Disclosure.Button
                 type="button"
-                className="flex items-center w-full p-2 text-base text-gray-900 transition rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                className="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 aria-controls="dropdown-example"
               >
-                <TagIcon className="w-6 h-6" />
-                <span className="flex-1 ml-3 text-left whitespace-nowrap">
+                <TagIcon className="h-6 w-6" />
+                <span className="ml-3 flex-1 whitespace-nowrap text-left">
                   Browse Tags
                 </span>
-                <ChevronDownIcon className="w-6 h-5" />
+                <ChevronDownIcon className="h-5 w-6" />
               </Disclosure.Button>
               <Disclosure.Panel>
-                <ul className="py-2 space-y-2">
+                <ul className="space-y-2 py-2">
                   <li>
                     <a href="#" className="sideDropItem">
-                      WebDev
+                      #WebDev
                     </a>
                   </li>
                   <li>
                     <a href="#" className="sideDropItem">
-                      GameDev
+                      #GameDev
                     </a>
                   </li>
                   <li>
                     <a href="#" className="sideDropItem">
-                      JavaScript
+                      #JavaScript
                     </a>
                   </li>
                 </ul>
@@ -94,14 +94,14 @@ const Sidebar = () => {
           </li>
           <li>
             <a href="#" className="sideMenuItem">
-              <ArrowLeftCircleIcon className="w-6 h-6" />
-              <span className="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+              <ArrowLeftCircleIcon className="h-6 w-6" />
+              <span className="ml-3 flex-1 whitespace-nowrap">Sign In</span>
             </a>
           </li>
           <li>
             <a href="#" className="sideMenuItem">
-              <PencilSquareIcon className="w-6 h-6" />
-              <span className="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+              <PencilSquareIcon className="h-6 w-6" />
+              <span className="ml-3 flex-1 whitespace-nowrap">Sign Up</span>
             </a>
           </li>
         </ul>

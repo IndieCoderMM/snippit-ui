@@ -17,7 +17,7 @@ const initialState: SnippetState = {
 
 export const getAllSnippets = createAsyncThunk('snippets/get', async () => {
   const res = await ApiService.getAllSnippets();
-  const data = res.data;
+  const data: Snippet[] = res.data;
 
   return data;
 });

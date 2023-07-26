@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className="bg-gray-800 fixed top-0 left-0 right-0 h-16"
+      className="fixed left-0 right-0 top-0 z-20 h-16 border-b border-slate-400 bg-white"
     >
       {({ open }) => (
         <>
@@ -45,35 +45,15 @@ const Navbar = () => {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <CodeBracketIcon className="h-10 w-10 text-blue-500" />
-                </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames({
-                          classes: [
-                            isActive(item.href)
-                              ? 'bg-gray-900 text-white'
-                              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                            'rounded-md px-3 py-2 text-sm font-medium',
-                          ],
-                        })}
-                        aria-current={isActive(item.href) ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
+                <div className="flex flex-shrink-0 items-center text-primary-color">
+                  <CodeBracketIcon className="h-10 w-10 " />
+                  <h1 className="text-2xl font-bold">Snippit</h1>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="rounded-full p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />

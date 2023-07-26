@@ -8,13 +8,13 @@ import { Snippet } from '../../common.types';
 
 const SnippetCard = (props: Snippet) => {
   return (
-    <div className="flex flex-col gap-3 bg-white border rounded-md p-5 hover:shadow-md cursor-pointer">
+    <div className="flex cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
       <h3 className="text-2xl font-semibold">{props.title}</h3>
       <div className="flex gap-5">
         <div>
           <img
             src="https://randomuser.me/api/portraits/men/32.jpg"
-            className="w-12 h-12 rounded-full object-cover"
+            className="h-12 w-12 rounded-full object-cover"
           />
         </div>
         <div>
@@ -26,43 +26,43 @@ const SnippetCard = (props: Snippet) => {
       <div>
         <p>{props.description}</p>
       </div>
-      <div className="flexStart gap-2 text-sky-500">
+      <div className="flexStart gap-2 text-accent-color">
         <span>#Snippit</span>
         <span>#CodeShare</span>
         <span>#Developers</span>
       </div>
-      <pre className="w-full max-w-lg overflow-auto p-3 rounded-md border">
+      <pre className="max-w-md overflow-auto rounded-md border p-3">
         <code>{props.code}</code>
       </pre>
       <div className="flexStart gap-5">
         <button
           type="button"
-          className="flexCenter bg-gray-100 text-gray-500 rounded-lg p-3 transition hover:shadow-md hover:ring-1"
+          className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"
         >
-          <StarIcon className="w-6 h-6" />
-          <span className="font-medium ml-3">{props.stars_counter} stars</span>
+          <StarIcon className="h-6 w-6" />
+          <span className="ml-3 font-medium">{props.stars_counter} stars</span>
         </button>
         <button
           type="button"
-          className="flexCenter bg-gray-100 text-gray-500 rounded-lg p-3 transition hover:shadow-md hover:ring-1"
+          className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"
         >
-          <ChatBubbleBottomCenterIcon className="w-6 h-6" />
-          <span className="font-medium ml-3">
+          <ChatBubbleBottomCenterIcon className="h-6 w-6" />
+          <span className="ml-3 font-medium">
             {props.comments_counter} comments
           </span>
         </button>
         <button
           type="button"
-          className="flexCenter bg-gray-100 text-gray-500 rounded-lg p-3 transition hover:shadow-md hover:ring-1"
+          className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"
         >
-          <BookmarkIcon className="w-6 h-6" />
+          <BookmarkIcon className="h-6 w-6" />
           <span className="sr-only">Bookmark</span>
         </button>
         <button
           type="button"
-          className="flexCenter bg-gray-100 text-gray-500 rounded-lg p-3 transition hover:shadow-md hover:ring-1"
+          className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"
         >
-          <PaperAirplaneIcon className="w-6 h-6 -rotate-12" />
+          <PaperAirplaneIcon className="h-6 w-6 -rotate-12" />
           <span className="sr-only">Share</span>
         </button>
       </div>
