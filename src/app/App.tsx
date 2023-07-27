@@ -7,6 +7,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Sidebar from '../common/components/Sidebar';
 import PageNotFound from '../pages/PageNotFound';
+import Bookmarks from '../pages/Bookmarks';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/bookmarks" element={<Bookmarks />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </main>

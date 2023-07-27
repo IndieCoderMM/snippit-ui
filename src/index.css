@@ -41,7 +41,7 @@ body {
 }
 
 .sideMenuItem.active {
-  @apply text-accent-color;
+  @apply bg-accent-color text-white;
 }
 
 .sideDropItem {

@@ -4,9 +4,17 @@ import {
   PaperAirplaneIcon,
   StarIcon,
 } from '@heroicons/react/24/outline';
+import {
+  StarIcon as FilledStarIcon,
+  BookmarkIcon as FilledBookmarkIcon,
+} from '@heroicons/react/24/solid';
 import { Snippet } from '../../common.types';
+import { currentUser } from '../../common/constants/sample';
 
 const SnippetCard = (props: Snippet) => {
+  const starred = currentUser.starred_snippets.includes(props.id);
+  const bookmarked = currentUser.bookmarked_snippets.includes(props.id);
+
   return (
     <div className="w-100 flex cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
       <h3 className="text-2xl font-semibold">{props.title}</h3>
@@ -39,7 +47,11 @@ const SnippetCard = (props: Snippet) => {
           type="button"
           className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"
         >
-          <StarIcon className="h-6 w-6" />
+          {starred ? (
+            <FilledStarIcon className="h-6 w-6 text-yellow-500" />
+          ) : (
+            <StarIcon className="h-6 w-6" />
+          )}
           <span className="ml-3 font-medium">{props.stars_counter} stars</span>
         </button>
         <button
@@ -55,7 +67,11 @@ const SnippetCard = (props: Snippet) => {
           type="button"
           className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"
         >
-          <BookmarkIcon className="h-6 w-6" />
+          {bookmarked ? (
+            <FilledBookmarkIcon className="h-6 w-6 text-accent-color" />
+          ) : (
+            <BookmarkIcon className="h-6 w-6" />
+          )}
           <span className="sr-only">Bookmark</span>
         </button>
         <button
