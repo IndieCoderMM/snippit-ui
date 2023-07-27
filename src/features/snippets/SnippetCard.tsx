@@ -8,8 +8,8 @@ import {
   StarIcon as FilledStarIcon,
   BookmarkIcon as FilledBookmarkIcon,
 } from '@heroicons/react/24/solid';
-import { Snippet } from '../../common.types';
 import { currentUser } from '../../common/constants/sample';
+import { Snippet } from '../../app/common.types';
 
 const SnippetCard = (props: Snippet) => {
   const starred = currentUser.starred_snippets.includes(props.id);

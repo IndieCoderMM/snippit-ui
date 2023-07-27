@@ -1,4 +1,4 @@
-import { Snippet } from '../../common.types';
+import { Snippet } from '../../app/common.types';
 import SnippetCard from './SnippetCard';
 
 const SnippetList = ({ snippets }: { snippets: Snippet[] }) => {
