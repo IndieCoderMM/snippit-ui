@@ -8,18 +8,18 @@ import { Snippet } from '../../common.types';
 
 const SnippetCard = (props: Snippet) => {
   return (
-    <div className="flex cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
+    <div className="w-100 flex cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
       <h3 className="text-2xl font-semibold">{props.title}</h3>
       <div className="flex gap-5">
         <div>
           <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
+            src={props.author.avatar_url}
             className="h-12 w-12 rounded-full object-cover"
           />
         </div>
         <div>
-          <p className="font-medium">Bob Realman</p>
-          <p className="text-slate-500">Senior React Developer</p>
+          <p className="font-medium">{props.author.name}</p>
+          <p className="text-slate-500">{props.author.bio}</p>
           <p className="text-sm text-slate-500">3 h ago</p>
         </div>
       </div>
@@ -31,10 +31,10 @@ const SnippetCard = (props: Snippet) => {
         <span>#CodeShare</span>
         <span>#Developers</span>
       </div>
-      <pre className="max-w-md overflow-auto rounded-md border p-3">
+      <pre className="max-w-xs overflow-auto rounded-md border p-3 sm:max-w-xl">
         <code>{props.code}</code>
       </pre>
-      <div className="flexStart gap-5">
+      <div className="flexStart flex-wrap gap-5">
         <button
           type="button"
           className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"

@@ -2,20 +2,20 @@ import { Disclosure } from '@headlessui/react';
 import {
   HomeIcon,
   ChevronDownIcon,
-  FireIcon,
   TagIcon,
   BookmarkIcon,
   InboxIcon,
   UsersIcon,
   PencilSquareIcon,
   ArrowLeftCircleIcon,
+  DocumentIcon,
 } from '@heroicons/react/24/solid';
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <aside
-      className="fixed left-0 top-16 z-20 h-screen w-56 -translate-x-full transition-transform sm:translate-x-0"
+      className="fixed left-0 top-16 z-20 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0"
       aria-label="Sidebar"
     >
       <div className="h-full overflow-y-auto bg-white px-3 py-4">
@@ -26,7 +26,15 @@ const Sidebar = () => {
               <span className="ml-3">My Feed</span>
             </NavLink>
           </li>
-
+          <li>
+            <NavLink to="/inbox" className="sideMenuItem">
+              <InboxIcon className="h-6 w-6" />
+              <span className="ml-3 flex-1 whitespace-nowrap">Inbox</span>
+              <span className="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-blue-100 p-3 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                3
+              </span>
+            </NavLink>
+          </li>
           <li>
             <NavLink to="/bookmarks" className="sideMenuItem">
               <BookmarkIcon className="h-6 w-6" />
@@ -43,21 +51,13 @@ const Sidebar = () => {
           </li>
           <li>
             <NavLink to="/popular_posts" className="sideMenuItem">
-              <FireIcon className="h-6 w-6" />
+              <DocumentIcon className="h-6 w-6" />
               <span className="ml-3 flex-1 whitespace-nowrap">
-                Popular Posts
+                Documentation
               </span>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/inbox" className="sideMenuItem">
-              <InboxIcon className="h-6 w-6" />
-              <span className="ml-3 flex-1 whitespace-nowrap">Inbox</span>
-              <span className="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-blue-100 p-3 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-                3
-              </span>
-            </NavLink>
-          </li>
+
           <li>
             <Disclosure>
               <Disclosure.Button

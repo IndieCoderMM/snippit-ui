@@ -1,15 +1,17 @@
-export interface Snippet {
-  id: number;
-  title: string;
-  description: string;
-  code: string;
-  language: string;
-  stars_counter: number;
-  comments_counter: number;
-  created_at: string;
-  updated_at: string;
-  user_id: number;
-}
+import { Snippet, User } from '../../common.types';
+
+export const currentUser: User = {
+  id: 201,
+  username: 'john_doe',
+  email: 'john.doe@example.com',
+  firstName: 'John',
+  lastName: 'Doe',
+  bio: 'Software Developer',
+  avatar_url: 'https://randomuser.me/api/portraits/men/99.jpg',
+  bookmarked_snippets: [1, 3],
+  starred_snippets: [2, 5],
+  shared_snippets: [4],
+};
 
 export const snippets: Snippet[] = [
   {
@@ -22,7 +24,12 @@ export const snippets: Snippet[] = [
     comments_counter: 3,
     created_at: '2023-07-25T12:34:56',
     updated_at: '2023-07-25T14:12:34',
-    user_id: 101,
+    author: {
+      id: 101,
+      name: 'John Doe',
+      bio: 'Python enthusiast',
+      avatar_url: 'https://randomuser.me/api/portraits/men/32.jpg',
+    },
   },
   {
     id: 2,
@@ -34,7 +41,12 @@ export const snippets: Snippet[] = [
     comments_counter: 2,
     created_at: '2023-07-25T10:20:30',
     updated_at: '2023-07-25T11:15:25',
-    user_id: 102,
+    author: {
+      id: 102,
+      name: 'Jane Smith',
+      bio: 'JavaScript lover',
+      avatar_url: 'https://randomuser.me/api/portraits/women/32.jpg',
+    },
   },
   {
     id: 3,
@@ -46,7 +58,12 @@ export const snippets: Snippet[] = [
     comments_counter: 7,
     created_at: '2023-07-25T08:45:10',
     updated_at: '2023-07-25T09:30:20',
-    user_id: 103,
+    author: {
+      id: 103,
+      name: 'Alice Johnson',
+      bio: 'CSS wizard',
+      avatar_url: 'https://randomuser.me/api/portraits/women/52.jpg',
+    },
   },
   {
     id: 4,
@@ -59,7 +76,12 @@ export const snippets: Snippet[] = [
     comments_counter: 4,
     created_at: '2023-07-24T16:50:12',
     updated_at: '2023-07-25T10:05:40',
-    user_id: 104,
+    author: {
+      id: 104,
+      name: 'Robert Brown',
+      bio: 'Frontend developer',
+      avatar_url: 'https://randomuser.me/api/portraits/men/52.jpg',
+    },
   },
   {
     id: 5,
@@ -72,6 +94,11 @@ export const snippets: Snippet[] = [
     comments_counter: 6,
     created_at: '2023-07-23T14:15:40',
     updated_at: '2023-07-25T13:00:00',
-    user_id: 105,
+    author: {
+      id: 105,
+      name: 'Michael Anderson',
+      bio: 'Game developer',
+      avatar_url: 'https://randomuser.me/api/portraits/men/44.jpg',
+    },
   },
 ];
