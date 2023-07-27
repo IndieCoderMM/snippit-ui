@@ -8,5 +8,9 @@ export interface Snippet {
   comments_counter: number;
   created_at: string;
   updated_at: string;
-  user_id: number;
+  author: {
+    id: number;
+    name: string;
+    bio: string;
+  };
 }
