@@ -16,7 +16,7 @@ const SnippetCard = (props: Snippet) => {
   const bookmarked = currentUser.bookmarked_snippets.includes(props.id);
 
   return (
-    <div className="w-100 flex cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
+    <div className="flex max-w-full cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
       <h3 className="text-2xl font-semibold">{props.title}</h3>
       <div className="flex gap-5">
         <div>
@@ -39,9 +39,11 @@ const SnippetCard = (props: Snippet) => {
         <span>#CodeShare</span>
         <span>#Developers</span>
       </div>
-      <pre className="max-w-xs overflow-auto rounded-md border p-3 sm:max-w-xl">
-        <code>{props.code}</code>
-      </pre>
+      <div className="overflow-auto rounded-md border bg-gray-200 p-3">
+        <pre>
+          <code>{props.code}</code>
+        </pre>
+      </div>
       <div className="flexStart flex-wrap gap-5">
         <button
           type="button"

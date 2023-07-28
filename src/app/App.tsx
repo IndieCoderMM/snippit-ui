@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <Navbar />
+      <Sidebar />
       <main className="mt-16">
-        <Sidebar />
         <Routes>
           <Route path="/" element={<SnippetsFeed />} />
           <Route path="/contributors" element={<Contributors />} />

@@ -10,10 +10,10 @@ import ProfileMenu from './ProfileMenu';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Snippets', href: '/snippets' },
+  { name: 'Inbox', href: '/inbox' },
   { name: 'Contributors', href: '/contributors' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Bookmarks', href: '/bookmarks' },
+  { name: 'Documentation', href: '/documentation' },
 ];
 
 function classNames({ classes = [] }: { classes?: string[] } = {}) {
@@ -62,7 +62,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="bg-white sm:hidden">
+          <Disclosure.Panel className="bg-white shadow-sm sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -72,8 +72,8 @@ const Navbar = () => {
                   className={classNames({
                     classes: [
                       isActive(item.href)
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        ? 'bg-accent-color text-white'
+                        : 'text-gray-500 hover:bg-secondary-color hover:text-white',
                       'block rounded-md px-3 py-2 text-base font-medium',
                     ],
                   })}

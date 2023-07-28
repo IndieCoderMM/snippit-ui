@@ -30,7 +30,7 @@ const Sidebar = () => {
             <NavLink to="/inbox" className="sideMenuItem">
               <InboxIcon className="h-6 w-6" />
               <span className="ml-3 flex-1 whitespace-nowrap">Inbox</span>
-              <span className="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-blue-100 p-3 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+              <span className="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-secondary-color p-3 text-sm font-medium text-primary-color">
                 3
               </span>
             </NavLink>
@@ -62,7 +62,7 @@ const Sidebar = () => {
             <Disclosure>
               <Disclosure.Button
                 type="button"
-                className="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                className="group flex w-full items-center rounded-lg p-2 text-base text-gray-500 transition hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 aria-controls="dropdown-example"
               >
                 <TagIcon className="h-6 w-6" />
