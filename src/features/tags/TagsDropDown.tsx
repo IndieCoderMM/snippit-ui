@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { useEffect } from 'react';
 import { Status } from '../../common/constants';
 import { getAllTags } from './tagsSlice';
+import { Link } from 'react-router-dom';
 
 const TagsDropDown = () => {
   const tags = useAppSelector((state) => state.tags);
@@ -33,7 +34,9 @@ const TagsDropDown = () => {
           <ul className="space-y-1 py-1">
             {tags.data.map((tag) => (
               <li key={tag.id} className="sideDropItem">
-                <p>#{tag.name}</p>
+                <Link to={`/tags/${tag.name}`} className="h-full w-full">
+                  #{tag.name}
+                </Link>
               </li>
             ))}
           </ul>

@@ -10,6 +10,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { currentUser } from '../../common/constants/sample';
 import { Snippet } from '../../app/common.types';
+import { formatDate } from '../../common/utils/formatDate';
 
 const SnippetCard = (props: Snippet) => {
   const starred = currentUser.starred_snippets.includes(props.id);
@@ -28,7 +29,9 @@ const SnippetCard = (props: Snippet) => {
         <div>
           <p className="font-medium">{props.user?.name}</p>
           <p className="text-slate-500">{props.user?.bio}</p>
-          <p className="text-sm text-slate-500">3 h ago</p>
+          <p className="text-sm text-slate-500">
+            {formatDate(props.created_at)}
+          </p>
         </div>
       </div>
       <div>
