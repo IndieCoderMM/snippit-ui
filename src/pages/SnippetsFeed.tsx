@@ -11,7 +11,6 @@ const SnippetsFeed = () => {
 
   useEffect(() => {
     if (snippets.status === Status.Idle) {
-      console.log('Fetching...');
       dispatch(getAllSnippets());
     }
   }, [snippets, dispatch]);
@@ -23,6 +22,15 @@ const SnippetsFeed = () => {
           title="Fetching data from API"
           message="Please be patient. Sometimes it only takes ETERNITY! 😉"
         />
+      </div>
+    );
+  }
+
+  if (snippets.status === Status.Error) {
+    return (
+      <div className="flex min-h-screen flex-col gap-5 bg-white py-10 text-center">
+        <h2 className="text-2xl font-semibold">Oops! Something went wrong😯</h2>
+        <p className="text-lg font-medium text-rose-500">{snippets.error}</p>
       </div>
     );
   }

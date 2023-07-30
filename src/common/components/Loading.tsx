@@ -2,7 +2,7 @@ import Style from './Loading.module.css';
 
 const Loading = ({ title, message }: { title: string; message: string }) => {
   return (
-    <div className="grid place-items-center">
+    <div className="grid place-items-center text-center">
       <h2 className="text-3xl font-semibold capitalize text-gray-500">
         {title}
       </h2>

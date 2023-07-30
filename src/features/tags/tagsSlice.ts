@@ -1,41 +1,41 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import ApiService from '../../common/services';
 import { Status } from '../../common/constants';
-import { Snippet } from '../../app/common.types';
+import { Tag } from '../../app/common.types';
 
-interface SnippetState {
+interface TagState {
   status: Status;
-  data: Snippet[];
+  data: Tag[];
   error: string;
 }
 
-const initialState: SnippetState = {
+const initialState: TagState = {
   status: Status.Idle,
   data: [],
   error: '',
 };
 
-export const getAllSnippets = createAsyncThunk('snippets/get', async () => {
-  const res = await ApiService.getAllSnippets();
+export const getAllTags = createAsyncThunk('tags/get', async () => {
+  const res = await ApiService.getAllTags();
 
-  const data: Snippet[] = res.data;
+  const data: Tag[] = res.data;
 
   return data;
 });
 
-const snippetsSlice = createSlice({
-  name: 'snippets',
+const tagsSlice = createSlice({
+  name: 'tags',
   initialState,
   extraReducers(builder) {
     builder
-      .addCase(getAllSnippets.pending, (state) => {
+      .addCase(getAllTags.pending, (state) => {
         state.status = Status.Loading;
       })
-      .addCase(getAllSnippets.rejected, (state, action) => {
+      .addCase(getAllTags.rejected, (state, action) => {
         state.status = Status.Error;
         state.error = action.error.message!;
       })
-      .addCase(getAllSnippets.fulfilled, (state, action) => {
+      .addCase(getAllTags.fulfilled, (state, action) => {
         state.status = Status.Success;
         state.data = action.payload;
       });
@@ -43,4 +43,4 @@ const snippetsSlice = createSlice({
   reducers: {},
 });
 
-export default snippetsSlice.reducer;
+export default tagsSlice.reducer;

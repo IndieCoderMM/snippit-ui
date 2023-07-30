@@ -1,8 +1,5 @@
-import { Disclosure } from '@headlessui/react';
 import {
   HomeIcon,
-  ChevronDownIcon,
-  TagIcon,
   BookmarkIcon,
   InboxIcon,
   UsersIcon,
@@ -11,6 +8,7 @@ import {
   DocumentIcon,
 } from '@heroicons/react/24/solid';
 import { NavLink } from 'react-router-dom';
+import TagsDropDown from '../../features/tags/TagsDropDown';
 
 const Sidebar = () => {
   return (
@@ -57,40 +55,8 @@ const Sidebar = () => {
               </span>
             </NavLink>
           </li>
-
           <li>
-            <Disclosure>
-              <Disclosure.Button
-                type="button"
-                className="group flex w-full items-center rounded-lg p-2 text-base text-gray-500 transition hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                aria-controls="dropdown-example"
-              >
-                <TagIcon className="h-6 w-6" />
-                <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                  Browse Tags
-                </span>
-                <ChevronDownIcon className="h-5 w-6" />
-              </Disclosure.Button>
-              <Disclosure.Panel>
-                <ul className="space-y-2 py-2">
-                  <li>
-                    <a href="#" className="sideDropItem">
-                      #WebDev
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="sideDropItem">
-                      #GameDev
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="sideDropItem">
-                      #JavaScript
-                    </a>
-                  </li>
-                </ul>
-              </Disclosure.Panel>
-            </Disclosure>
+            <TagsDropDown />
           </li>
           <li>
             <a href="#" className="sideMenuItem">

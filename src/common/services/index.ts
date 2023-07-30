@@ -5,6 +5,8 @@ const API_ENDPOINT = import.meta.env.VITE_API_URL;
 
 const getAllSnippets = () => axios.get(API_ENDPOINT + 'snippets');
 
-const ApiService = { getAllSnippets };
+const getAllTags = () => axios.get(API_ENDPOINT + 'tags');
+
+const ApiService = { getAllSnippets, getAllTags };
 
 export default ApiService;

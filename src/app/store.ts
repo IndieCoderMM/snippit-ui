@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import snippetReducer from '../features/snippets/snippetsSlice';
+import tagReducer from '../features/tags/tagsSlice';
 
 const store = configureStore({
   reducer: {
     snippets: snippetReducer,
+    tags: tagReducer,
   },
 });
 
