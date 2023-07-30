@@ -24,7 +24,8 @@ export const snippets: Snippet[] = [
     comments_counter: 3,
     created_at: '2023-07-25T12:34:56',
     updated_at: '2023-07-25T14:12:34',
-    author: {
+    tags: [{ id: 1, name: 'Python' }],
+    user: {
       id: 101,
       name: 'John Doe',
       bio: 'Python enthusiast',
@@ -41,7 +42,8 @@ export const snippets: Snippet[] = [
     comments_counter: 2,
     created_at: '2023-07-25T10:20:30',
     updated_at: '2023-07-25T11:15:25',
-    author: {
+    tags: [{ id: 2, name: 'JavaScript' }],
+    user: {
       id: 102,
       name: 'Jane Smith',
       bio: 'JavaScript lover',
@@ -58,7 +60,8 @@ export const snippets: Snippet[] = [
     comments_counter: 7,
     created_at: '2023-07-25T08:45:10',
     updated_at: '2023-07-25T09:30:20',
-    author: {
+    tags: [{ id: 3, name: 'CSSS' }],
+    user: {
       id: 103,
       name: 'Alice Johnson',
       bio: 'CSS wizard',
@@ -76,7 +79,8 @@ export const snippets: Snippet[] = [
     comments_counter: 4,
     created_at: '2023-07-24T16:50:12',
     updated_at: '2023-07-25T10:05:40',
-    author: {
+    tags: [{ id: 4, name: 'React' }],
+    user: {
       id: 104,
       name: 'Robert Brown',
       bio: 'Frontend developer',
@@ -94,7 +98,8 @@ export const snippets: Snippet[] = [
     comments_counter: 6,
     created_at: '2023-07-23T14:15:40',
     updated_at: '2023-07-25T13:00:00',
-    author: {
+    tags: [{ id: 5, name: 'GameDev' }],
+    user: {
       id: 105,
       name: 'Michael Anderson',
       bio: 'Game developer',

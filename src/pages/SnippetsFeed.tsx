@@ -2,8 +2,8 @@ import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { useEffect } from 'react';
 import { Status } from '../common/constants';
 import { getAllSnippets } from '../features/snippets/snippetsSlice';
-import { snippets as sampleSnippets } from '../common/constants/sample';
 import SnippetList from '../features/snippets/SnippetList';
+import Loading from '../common/components/Loading';
 
 const SnippetsFeed = () => {
   const snippets = useAppSelector((state) => state.snippets);
@@ -16,17 +16,18 @@ const SnippetsFeed = () => {
     }
   }, [snippets, dispatch]);
 
-  // if (snippets.status === Status.Loading) {
-  //   return (
-  //     <div>
-  //       <h2 className="font-bold text-2xl text-slate-500 h-1/2 text-center">
-  //         Loading...
-  //       </h2>
-  //     </div>
-  //   );
-  // }
+  if (snippets.status === Status.Loading) {
+    return (
+      <div className="grid min-h-screen place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <Loading
+          title="Fetching data from API"
+          message="Please be patient. Sometimes it only takes ETERNITY! 😉"
+        />
+      </div>
+    );
+  }
 
-  return <SnippetList snippets={sampleSnippets} />;
+  return <SnippetList snippets={snippets.data} />;
 };
 
 export default SnippetsFeed;

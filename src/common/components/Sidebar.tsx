@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <aside
-      className="fixed left-0 top-16 z-20 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0"
+      className="fixed left-0 top-16 z-20 h-screen w-64 -translate-x-full border-r transition-transform sm:translate-x-0"
       aria-label="Sidebar"
     >
       <div className="h-full overflow-y-auto bg-white px-3 py-4">

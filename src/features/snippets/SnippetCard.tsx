@@ -21,13 +21,13 @@ const SnippetCard = (props: Snippet) => {
       <div className="flex gap-5">
         <div>
           <img
-            src={props.author.avatar_url}
+            src={props.user.avatar_url}
             className="h-12 w-12 rounded-full object-cover"
           />
         </div>
         <div>
-          <p className="font-medium">{props.author.name}</p>
-          <p className="text-slate-500">{props.author.bio}</p>
+          <p className="font-medium">{props.user.name}</p>
+          <p className="text-slate-500">{props.user.bio}</p>
           <p className="text-sm text-slate-500">3 h ago</p>
         </div>
       </div>
@@ -35,9 +35,9 @@ const SnippetCard = (props: Snippet) => {
         <p>{props.description}</p>
       </div>
       <div className="flexStart gap-2 text-accent-color">
-        <span>#Snippit</span>
-        <span>#CodeShare</span>
-        <span>#Developers</span>
+        {props.tags.map((tag) => (
+          <span key={tag.id}>#{tag.name}</span>
+        ))}
       </div>
       <div className="overflow-auto rounded-md border bg-gray-200 p-3">
         <pre>

@@ -14,7 +14,7 @@ function App() {
     <>
       <Navbar />
       <Sidebar />
-      <main className="mt-16">
+      <main className="mt-16 min-h-screen">
         <Routes>
           <Route path="/" element={<SnippetsFeed />} />
           <Route path="/contributors" element={<Contributors />} />

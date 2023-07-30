@@ -4,13 +4,12 @@ import { Status } from '../common/constants';
 import { getAllSnippets } from '../features/snippets/snippetsSlice';
 import { currentUser } from '../common/constants/sample';
 import SnippetList from '../features/snippets/SnippetList';
-import { snippets as sampleSnippets } from '../common/constants/sample';
 
 const Bookmarks = () => {
   const snippets = useAppSelector((state) => state.snippets);
   const dispatch = useAppDispatch();
 
-  const bookmarks = sampleSnippets.filter((snippet) =>
+  const bookmarks = snippets.data.filter((snippet) =>
     currentUser.bookmarked_snippets.includes(snippet.id),
   );
 

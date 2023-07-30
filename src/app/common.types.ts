@@ -8,12 +8,13 @@ export interface Snippet {
   comments_counter: number;
   created_at: string;
   updated_at: string;
-  author: {
+  user: {
     id: number;
     name: string;
     bio: string;
     avatar_url: string;
   };
+  tags: Tag[];
 }
 
 export interface User {
@@ -39,4 +40,9 @@ export interface Comment {
     name: string;
     avatar_url: string;
   };
+}
+
+export interface Tag {
+  id: number;
+  name: string;
 }
