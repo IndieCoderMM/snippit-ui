@@ -11,10 +11,16 @@ import {
 import { currentUser } from '../../common/constants/sample';
 import { Snippet } from '../../app/common.types';
 import { formatDate } from '../../common/utils/formatDate';
+import Prism from 'prismjs';
+import { useEffect } from 'react';
 
 const SnippetCard = (props: Snippet) => {
   const starred = currentUser.starred_snippets.includes(props.id);
   const bookmarked = currentUser.bookmarked_snippets.includes(props.id);
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
 
   return (
     <div className="flex max-w-full cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
@@ -42,9 +48,9 @@ const SnippetCard = (props: Snippet) => {
           <span key={tag.id}>#{tag.name}</span>
         ))}
       </div>
-      <div className="overflow-auto rounded-md border bg-gray-200 p-3">
-        <pre>
-          <code>{props.code}</code>
+      <div className="w-full">
+        <pre className="line-numbers">
+          <code className={`language-${props.language}`}>{props.code}</code>
         </pre>
       </div>
       <div className="flexStart flex-wrap gap-5">
