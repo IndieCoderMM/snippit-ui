@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ENDPOINT = import.meta.env.VITE_API_URL;
+const API_ENDPOINT = import.meta.env.VITE_API_URL as string;
 //  'http://localhost:3000/api/v1/'
 
 const getAllSnippets = () => axios.get(API_ENDPOINT + 'snippets');

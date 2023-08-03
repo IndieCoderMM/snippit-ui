@@ -11,7 +11,7 @@ const SnippetsFeed = () => {
 
   useEffect(() => {
     if (snippets.status === Status.Idle) {
-      dispatch(getAllSnippets());
+      dispatch(getAllSnippets()).catch((error) => console.error(error));
     }
   }, [snippets, dispatch]);
 

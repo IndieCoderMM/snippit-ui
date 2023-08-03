@@ -12,7 +12,7 @@ const TagsDropDown = () => {
 
   useEffect(() => {
     if (tags.status === Status.Idle) {
-      dispatch(getAllTags());
+      dispatch(getAllTags()).catch((error) => console.error(error));
     }
   }, [tags, dispatch]);
 

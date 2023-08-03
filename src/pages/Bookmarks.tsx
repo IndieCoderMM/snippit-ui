@@ -15,8 +15,7 @@ const Bookmarks = () => {
 
   useEffect(() => {
     if (snippets.status === Status.Idle) {
-      console.log('Fetching...');
-      dispatch(getAllSnippets());
+      dispatch(getAllSnippets()).catch((error) => console.error(error));
     }
   }, [snippets, dispatch]);
 

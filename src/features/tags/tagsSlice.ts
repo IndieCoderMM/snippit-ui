@@ -18,7 +18,7 @@ const initialState: TagState = {
 export const getAllTags = createAsyncThunk('tags/get', async () => {
   const res = await ApiService.getAllTags();
 
-  const data: Tag[] = res.data;
+  const data = res.data as Tag[];
 
   return data;
 });
