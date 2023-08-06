@@ -1,9 +1,9 @@
-import NotFound from './NotFound';
+import PageNotFound from './PageNotFound';
 
 const Contributors = () => {
   return (
     <div>
-      <NotFound />
+      <PageNotFound />
     </div>
   );
 };
