@@ -6,7 +6,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { useLocation } from 'react-router-dom';
-import ProfileMenu from './ProfileMenu';
+import { UserButton } from '@clerk/clerk-react'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -55,7 +55,7 @@ const Navbar = () => {
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-                <ProfileMenu />
+                <UserButton />
               </div>
             </div>
           </div>
