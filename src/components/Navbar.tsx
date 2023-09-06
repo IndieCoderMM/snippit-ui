@@ -6,7 +6,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { useLocation } from 'react-router-dom';
-import { UserButton } from '@clerk/clerk-react'
+import { UserButton } from '@clerk/clerk-react';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       {({ open }) => (
         <>
-          <div className="px-2 sm:px-6 lg:px-8">
+          <div className="xPadding">
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden">
@@ -42,7 +42,7 @@ const Navbar = () => {
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
-                <div className="flex flex-shrink-0 items-center text-primary-color">
+                <div className="text-primary-color flex flex-shrink-0 items-center">
                   <CodeBracketIcon className="h-10 w-10 " />
                   <h1 className="text-2xl font-bold">Snippit</h1>
                 </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     classes: [
                       isActive(item.href)
                         ? 'bg-accent-color text-white'
-                        : 'text-gray-500 hover:bg-secondary-color hover:text-white',
+                        : 'hover:bg-secondary-color text-gray-500 hover:text-white',
                       'block rounded-md px-3 py-2 text-base font-medium',
                     ],
                   })}

@@ -8,7 +8,7 @@ import {
   DocumentIcon,
 } from '@heroicons/react/24/solid';
 import { NavLink } from 'react-router-dom';
-import TagsDropDown from '../../features/tags/TagsDropDown';
+import TagsDropDown from '../features/tags/TagsDropDown';
 
 const Sidebar = () => {
   return (
@@ -28,7 +28,7 @@ const Sidebar = () => {
             <NavLink to="/inbox" className="sideMenuItem">
               <InboxIcon className="h-6 w-6" />
               <span className="ml-3 flex-1 whitespace-nowrap">Inbox</span>
-              <span className="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-secondary-color p-3 text-sm font-medium text-primary-color">
+              <span className="bg-secondary-color text-primary-color ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">
                 3
               </span>
             </NavLink>

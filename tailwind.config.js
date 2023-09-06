@@ -1,20 +1,34 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
-
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+module.exports = {
+  darkMode: ['class'],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
       },
+    },
+    extend: {
       colors: {
-        'primary-color': '#d42b63',
-        'secondary-color': '#f2c0d0',
-        'accent-color': '#be275a',
+        border: '#ECEFF1',
+        input: '#E0E0E0',
+        ring: '#2196F3',
+        background: '#FFFFFF',
+        foreground: '#333333',
+        primary: '#2196F3',
+        secondary: '#00C853',
+        destructive: '#FF5722',
+        muted: '#B0BEC5',
+        accent: '#FFC107',
       },
     },
   },
-  plugins: [],
-  darkMode: 'class',
+  plugins: [require('tailwindcss-animate')],
 };

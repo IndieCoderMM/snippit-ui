@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { Status } from '../common/constants';
+import { Status } from '../constants';
 import { getAllSnippets } from '../features/snippets/snippetsSlice';
-import { currentUser } from '../common/constants/sample';
+import { currentUser } from '../constants/sample';
 import SnippetList from '../features/snippets/SnippetList';
 
 const Bookmarks = () => {

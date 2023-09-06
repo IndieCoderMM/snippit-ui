@@ -1,4 +1,4 @@
-import { Snippet, User } from '../../app/common.types';
+import { Snippet, User } from '../app/common.types';
 
 export const currentUser: User = {
   id: 201,

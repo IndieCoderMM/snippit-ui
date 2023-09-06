@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import ApiService from '../../common/services';
-import { Status } from '../../common/constants';
+import ApiService from '../../services';
+import { Status } from '../../constants';
 import { Snippet } from '../../app/common.types';
 
 interface SnippetState {

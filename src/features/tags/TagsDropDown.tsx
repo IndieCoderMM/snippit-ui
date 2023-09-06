@@ -2,7 +2,7 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronDownIcon, TagIcon } from '@heroicons/react/24/solid';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { useEffect } from 'react';
-import { Status } from '../../common/constants';
+import { Status } from '../../constants';
 import { getAllTags } from './tagsSlice';
 import { Link } from 'react-router-dom';
 
