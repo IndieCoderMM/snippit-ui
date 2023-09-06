@@ -101,12 +101,14 @@ This is an overview of the `./src` directory.
 .
 ├── app/
 │   ├── App.tsx
+│   ├── Providers.tsx
 │   └── store.ts
 ├── assets
-├── common/
-│   ├── components
-│   ├── services
-│   └── constants
+├── components
+│   ├── Navbar.tsx
+│   └── Footer.tsx
+├── services
+├── constants
 ├── features/
 │   ├── snippets/
 │   │   ├── SnippetCard.tsx
@@ -115,14 +117,14 @@ This is an overview of the `./src` directory.
 ├── pages/
 │   ├── Home.tsx
 │   └── About.tsx
-├── index.css
+├── styles/
+│   └── global.css
 └── main.tsx
 ```
 
 - `app/`: App-wide setup and layout
-- `common/`: Shared code and resources
-  - `components/`: Reusable components across different pages
-  - `services/`: Interacting with the backend API
+- `components/`: Reusable components across different pages
+- `services/`: Interacting with the backend API
 - `features/`: Feature-specific folders
   - `snippets/`: Components and functions related to snippets
 - `pages/`: Main pages of the app

@@ -4,3 +4,17 @@ export enum Status {
   Success,
   Error,
 }
+
+export const Languages = [
+  'javascript',
+  'css',
+  'html',
+  'python',
+  'ruby',
+  'java',
+  'php',
+  'c',
+  'cpp',
+  'sh',
+  'go',
+];

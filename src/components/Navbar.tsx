@@ -3,9 +3,10 @@ import {
   Bars3Icon,
   BellIcon,
   CodeBracketIcon,
+  PlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { UserButton } from '@clerk/clerk-react';
 
 const navigation = [
@@ -22,6 +23,7 @@ function classNames({ classes = [] }: { classes?: string[] } = {}) {
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (href: string) => href === pathname;
   return (
@@ -48,6 +50,14 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="flexStart inset-y-0 right-0 flex items-center gap-3 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <button
+                  type="button"
+                  onClick={() => navigate('/create-snippet')}
+                  className="inline-flex items-center rounded-md border border-transparent bg-primary px-4 py-2 font-medium text-white shadow-sm hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+                >
+                  <PlusIcon className="mr-2 h-6 w-6" />
+                  Create Snippet
+                </button>
                 <button
                   type="button"
                   className="rounded-full p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"

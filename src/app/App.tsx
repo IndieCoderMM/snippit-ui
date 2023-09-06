@@ -13,6 +13,7 @@ import TagPage from '../pages/TagPage';
 import Home from '../pages/Home';
 
 import Providers from './Providers';
+import CreateSnippet from '@/pages/CreateSnippet';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             element={<SignUp routing="path" path="/sign-up" />}
           />
 
+          <Route path="/create-snippet" element={<CreateSnippet />} />
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

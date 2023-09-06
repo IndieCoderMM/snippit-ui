@@ -1,4 +1,4 @@
-import Style from './Loading.module.css';
+import Style from '@/styles/Loading.module.css';
 
 const Loading = ({ title, message }: { title: string; message: string }) => {
   return (

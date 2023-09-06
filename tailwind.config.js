@@ -20,7 +20,7 @@ module.exports = {
         border: '#ECEFF1',
         input: '#E0E0E0',
         ring: '#2196F3',
-        background: '#FFFFFF',
+        background: '#eaecf5',
         foreground: '#333333',
         primary: '#2196F3',
         secondary: '#00C853',
