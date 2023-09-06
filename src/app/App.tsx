@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { SignIn, SignUp, SignedIn, SignedOut } from '@clerk/clerk-react';
+import { SignedIn, SignedOut } from '@clerk/clerk-react';
 
 import Navbar from '../components/Navbar';
 import SnippetsFeed from '../pages/SnippetsFeed';
@@ -14,6 +14,9 @@ import Home from '../pages/Home';
 
 import Providers from './Providers';
 import CreateSnippet from '@/pages/CreateSnippet';
+import SignInPage from '@/pages/auth/SignInPage';
+import SignUpPage from '@/pages/auth/SignUpPage';
+import Onboarding from '@/pages/Onboarding';
 
 function App() {
   return (
@@ -35,16 +38,11 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/sign-in/*"
-            element={<SignIn routing="path" path="/sign-in" />}
-          />
-          <Route
-            path="/sign-up/*"
-            element={<SignUp routing="path" path="/sign-up" />}
-          />
+          <Route path="/sign-in/*" element={<SignInPage />} />
+          <Route path="/sign-up/*" element={<SignUpPage />} />
 
           <Route path="/create-snippet" element={<CreateSnippet />} />
+          <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/contributors" element={<Contributors />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

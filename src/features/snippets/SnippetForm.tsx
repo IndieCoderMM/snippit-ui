@@ -59,7 +59,7 @@ const SnippetForm = () => {
           name="title"
           value={snippetData.title}
           onChange={handleInputChange}
-          className="w-full rounded-xl bg-gray-100 p-4 outline-0"
+          className="formInput"
         />
       </div>
       <div className="flex flex-col">
@@ -69,7 +69,7 @@ const SnippetForm = () => {
           name="description"
           value={snippetData.description}
           onChange={handleInputChange}
-          className="w-full rounded-xl bg-gray-100 p-4 outline-0"
+          className="formInput"
         />
       </div>
       <div className="flex gap-4">
@@ -88,7 +88,7 @@ const SnippetForm = () => {
           <input
             id="project-tags"
             type="text"
-            className="w-full rounded-xl bg-gray-100 p-4 outline-0"
+            className="formInput"
             value={snippetData.tags.join(', ')}
             onChange={handleTagsChange}
           />
@@ -102,13 +102,10 @@ const SnippetForm = () => {
           value={snippetData.code}
           onChange={handleInputChange}
           rows={6}
-          className="w-full rounded-xl bg-gray-100 p-4 outline-0"
+          className="formInput"
         />
       </div>
-      <button
-        type="submit"
-        className="w-full max-w-[300px] rounded-xl bg-primary p-4 text-lg font-bold text-white shadow-sm hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
-      >
+      <button type="submit" className="submitBtn">
         Create Snippet
       </button>
     </form>

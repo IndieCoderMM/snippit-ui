@@ -1,13 +1,13 @@
 import Modal from '@/components/Modal';
 import SnippetForm from '@/features/snippets/SnippetForm';
-import { useAuth } from '@clerk/clerk-react';
-import { useNavigate } from 'react-router-dom';
+import { RedirectToSignIn, useAuth } from '@clerk/clerk-react';
 
 const CreateSnippet = () => {
   const { isLoaded, userId } = useAuth();
-  const navigate = useNavigate();
 
-  if (!isLoaded || !userId) navigate('/sign-in');
+  if (!isLoaded || !userId) {
+    return <RedirectToSignIn />;
+  }
 
   return (
     <Modal>

@@ -65,7 +65,7 @@ const Navbar = () => {
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-                <UserButton />
+                <UserButton afterSignOutUrl="/" />
               </div>
             </div>
           </div>
