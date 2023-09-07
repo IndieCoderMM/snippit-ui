@@ -12,8 +12,8 @@ import TagsDropDown from '../features/tags/TagsDropDown';
 
 const Sidebar = () => {
   return (
-    <aside
-      className="fixed left-0 top-16 z-20 h-screen w-64 -translate-x-full border-r transition-transform lg:translate-x-0"
+    <div
+      className="z-20 mx-auto hidden h-full max-h-[90%] w-full overflow-hidden rounded-md border-r shadow-md lg:col-span-2 lg:block xl:w-[70%]"
       aria-label="Sidebar"
     >
       <div className="h-full overflow-y-auto bg-white px-3 py-4">
@@ -72,7 +72,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-    </aside>
+    </div>
   );
 };
 

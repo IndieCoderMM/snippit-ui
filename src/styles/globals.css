@@ -8,8 +8,11 @@
   * {
     @apply border-border;
   }
-  body {
+  body,
+  html {
     @apply bg-background text-foreground;
+    height: 100%;
+    overflow: hidden;
     font-family: 'Nunito Sans', sans-serif;
   }
 }

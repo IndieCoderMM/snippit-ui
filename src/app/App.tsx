@@ -22,14 +22,16 @@ function App() {
   return (
     <Providers>
       <Navbar />
-      <main className="mt-16 grid min-h-screen place-items-center">
+      <main className=" mt-10 grid h-full w-full grid-cols-1 lg:grid-cols-8 lg:p-8">
+        <SignedIn>
+          <Sidebar />
+        </SignedIn>
         <Routes>
           <Route
             path="/"
             element={
               <>
                 <SignedIn>
-                  <Sidebar />
                   <SnippetsFeed />
                 </SignedIn>
                 <SignedOut>
