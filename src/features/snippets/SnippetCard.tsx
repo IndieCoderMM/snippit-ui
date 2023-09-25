@@ -23,9 +23,9 @@ const SnippetCard = (props: Snippet) => {
   }, []);
 
   return (
-    <div className="flex w-full cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
+    <div className="flex w-full max-w-[700px] flex-col gap-3 rounded-xl border bg-foreground p-4 text-text">
       <h3 className="text-2xl font-semibold">{props.title}</h3>
-      <div className="flex gap-5">
+      <div className="flex gap-2">
         <div>
           <img
             src={props.user?.avatar_url}

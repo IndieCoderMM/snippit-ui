@@ -74,7 +74,7 @@ const SelectBox = ({
             value={option}
             className={({ active }) =>
               `${
-                active ? 'bg-primary text-white' : 'text-gray-900'
+                active ? 'bg-primary ' : 'text-gray-900'
               } relative cursor-pointer select-none px-4 py-2`
             }
             >

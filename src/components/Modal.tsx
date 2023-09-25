@@ -23,12 +23,12 @@ const Modal = ({ children }: { children: ReactNode }) => {
   return (
     <div
       ref={overlay}
-      className="fixed bottom-0 left-0 right-0 top-0 z-10 mx-auto bg-black/80"
+      className="fixed bottom-0 left-0 right-0 top-0 z-[99] mx-auto bg-black/80"
       onClick={handleClick}
     >
       <div
         ref={wrapper}
-        className="absolute bottom-0 flex h-[90%] w-full flex-col items-center justify-start overflow-auto rounded-t-3xl bg-white px-8 pb-72 pt-14 lg:px-40"
+        className="absolute bottom-0 flex h-[90%] w-full flex-col items-center justify-start overflow-auto rounded-t-3xl bg-foreground px-8 pb-72 pt-14 text-text lg:px-40"
       >
         <button
           type="button"

@@ -22,10 +22,10 @@ function App() {
   return (
     <Providers>
       <Navbar />
-      <main className=" mt-10 grid h-full w-full grid-cols-1 lg:grid-cols-8 lg:p-8">
-        <SignedIn>
-          <Sidebar />
-        </SignedIn>
+      <SignedIn>
+        <Sidebar />
+      </SignedIn>
+      <main className="bg-background text-text">
         <Routes>
           <Route
             path="/"

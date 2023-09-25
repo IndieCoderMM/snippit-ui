@@ -12,7 +12,6 @@
   html {
     @apply bg-background text-foreground;
     height: 100%;
-    overflow: hidden;
     font-family: 'Nunito Sans', sans-serif;
   }
 }
@@ -73,7 +72,7 @@
   }
 
   .submitBtn {
-    @apply w-full max-w-[300px] rounded-xl bg-primary p-4 text-lg font-bold text-white shadow-sm hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+    @apply w-full max-w-[300px] rounded-xl bg-primary p-4 text-lg font-bold  shadow-sm hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
   }
 }
 
@@ -88,7 +87,7 @@
 }
 
 .sideMenuItem {
-  @apply flex items-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700;
+  @apply flex items-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700;
 }
 
 .sideMenuItem.active {
@@ -96,5 +95,5 @@
 }
 
 .sideDropItem {
-  @apply flex w-full items-center rounded-lg p-2 pl-11 text-primary transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700;
+  @apply flex w-full items-center rounded-lg p-2 pl-11 text-primary transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700;
 }

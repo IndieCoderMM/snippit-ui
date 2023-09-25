@@ -1,5 +1,5 @@
 import { Disclosure } from '@headlessui/react';
-import { ChevronDownIcon, TagIcon } from '@heroicons/react/24/solid';
+import { ChevronDownIcon, HashtagIcon } from '@heroicons/react/24/outline';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { useEffect } from 'react';
 import { Status } from '../../constants';
@@ -20,10 +20,10 @@ const TagsDropDown = () => {
     <Disclosure>
       <Disclosure.Button
         type="button"
-        className="group flex w-full items-center rounded-lg p-2 text-base text-gray-500 transition hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+        className="dark: group flex w-full items-center rounded-lg p-2 text-base text-gray-500 transition hover:bg-gray-100 dark:hover:bg-gray-700"
         aria-controls="dropdown-tags"
       >
-        <TagIcon className="h-6 w-6" />
+        <HashtagIcon className="h-6 w-6" />
         <span className="ml-3 flex-1 whitespace-nowrap text-left">
           Browse Tags
         </span>

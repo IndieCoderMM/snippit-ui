@@ -1,26 +1,26 @@
 import {
-  HomeIcon,
+  Squares2X2Icon,
   BookmarkIcon,
   InboxIcon,
   UsersIcon,
   PencilSquareIcon,
   ArrowLeftCircleIcon,
   DocumentIcon,
-} from '@heroicons/react/24/solid';
+} from '@heroicons/react/24/outline';
 import { NavLink } from 'react-router-dom';
 import TagsDropDown from '../features/tags/TagsDropDown';
 
 const Sidebar = () => {
   return (
     <div
-      className="z-20 mx-auto hidden h-full max-h-[90%] w-full overflow-hidden rounded-md border-r shadow-md lg:col-span-2 lg:block xl:w-[70%]"
+      className="fixed inset-y-0 bottom-0 left-0 top-16 z-20 hidden w-[250px] flex-col justify-between bg-foreground md:flex"
       aria-label="Sidebar"
     >
       <div className="h-full overflow-y-auto bg-white px-3 py-4">
         <ul className="space-y-2 font-medium">
           <li>
             <NavLink to="/" className="sideMenuItem">
-              <HomeIcon className="h-6 w-6" />
+              <Squares2X2Icon className="h-6 w-6" />
               <span className="ml-3">My Feed</span>
             </NavLink>
           </li>

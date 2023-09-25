@@ -3,11 +3,10 @@ import {
   Bars3Icon,
   BellIcon,
   CodeBracketIcon,
-  PlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { UserButton } from '@clerk/clerk-react';
+import { useLocation } from 'react-router-dom';
+import { UserButton, useUser } from '@clerk/clerk-react';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -23,20 +22,20 @@ function classNames({ classes = [] }: { classes?: string[] } = {}) {
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
+  const { isSignedIn, user } = useUser();
 
   const isActive = (href: string) => href === pathname;
   return (
     <Disclosure
       as="nav"
-      className="fixed left-0 right-0 top-0 z-20 h-16 border-b border-slate-400 bg-white"
+      className="fixed left-0 right-0 top-0 z-20 h-16 bg-foreground text-text"
     >
       {({ open }) => (
         <>
-          <div className="xPadding">
+          <div className="px-4">
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex items-center">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white md:hidden">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -44,20 +43,12 @@ const Navbar = () => {
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
-                <div className="text-primary-color flex flex-shrink-0 items-center">
+                <div className="flex flex-shrink-0 items-center text-primary">
                   <CodeBracketIcon className="h-10 w-10 " />
-                  <h1 className="text-2xl font-bold">Snippit</h1>
+                  <h1 className="text-2xl font-bold text-primary">Snippit</h1>
                 </div>
               </div>
               <div className="flexStart inset-y-0 right-0 flex items-center gap-3 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  onClick={() => navigate('/create-snippet')}
-                  className="inline-flex items-center rounded-md border border-transparent bg-primary px-4 py-2 font-medium text-white shadow-sm hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
-                >
-                  <PlusIcon className="mr-2 h-6 w-6" />
-                  Create Snippet
-                </button>
                 <button
                   type="button"
                   className="rounded-full p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -65,12 +56,26 @@ const Navbar = () => {
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-                <UserButton afterSignOutUrl="/" />
+                <div className="flex gap-1">
+                  <UserButton afterSignOutUrl="/" />
+                  <div className="hidden flex-col md:flex">
+                    {isSignedIn && (
+                      <>
+                        <p className="font-medium capitalize">
+                          {user?.fullName}
+                        </p>
+                        <p className="text-xs text-text/50">
+                          {user?.primaryEmailAddress?.toString()}
+                        </p>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <Disclosure.Panel className="bg-white shadow-sm lg:hidden">
+          <Disclosure.Panel className="bg-foreground text-text shadow-sm md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -80,8 +85,8 @@ const Navbar = () => {
                   className={classNames({
                     classes: [
                       isActive(item.href)
-                        ? 'bg-accent-color text-white'
-                        : 'hover:bg-secondary-color text-gray-500 hover:text-white',
+                        ? 'bg-secondary '
+                        : 'text-gray-500 hover:bg-secondary',
                       'block rounded-md px-3 py-2 text-base font-medium',
                     ],
                   })}
