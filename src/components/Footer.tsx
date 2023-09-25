@@ -8,17 +8,17 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <a href="https://Snippit.com/" className="flex items-center">
               <CodeBracketIcon className="h-10 w-10 text-blue-500" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="dark: self-center whitespace-nowrap text-2xl font-semibold">
                 Snippit
               </span>
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="dark: mb-6 text-sm font-semibold uppercase text-gray-900">
                 Follow us
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="font-medium text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
                   <a href="https://github.com/" className="hover:underline ">
                     Github
@@ -33,22 +33,22 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             © 2023{' '}
             <a href="https://Snippit.com/" className="hover:underline">
               Snippit™
             </a>
             . All Rights Reserved.
           </span>
-          <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+          <div className="mt-4 flex space-x-5 sm:mt-0 sm:justify-center">
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="dark:hover: text-gray-500 hover:text-gray-900"
             >
               <svg
-                className="w-4 h-4"
+                className="h-4 w-4"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -64,10 +64,10 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="dark:hover: text-gray-500 hover:text-gray-900"
             >
               <svg
-                className="w-4 h-4"
+                className="h-4 w-4"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -79,10 +79,10 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="dark:hover: text-gray-500 hover:text-gray-900"
             >
               <svg
-                className="w-4 h-4"
+                className="h-4 w-4"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -98,10 +98,10 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="dark:hover: text-gray-500 hover:text-gray-900"
             >
               <svg
-                className="w-4 h-4"
+                className="h-4 w-4"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -117,10 +117,10 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="dark:hover: text-gray-500 hover:text-gray-900"
             >
               <svg
-                className="w-4 h-4"
+                className="h-4 w-4"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"

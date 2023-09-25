@@ -1,26 +1,26 @@
 import {
-  HomeIcon,
+  Squares2X2Icon,
   BookmarkIcon,
   InboxIcon,
   UsersIcon,
   PencilSquareIcon,
   ArrowLeftCircleIcon,
   DocumentIcon,
-} from '@heroicons/react/24/solid';
+} from '@heroicons/react/24/outline';
 import { NavLink } from 'react-router-dom';
-import TagsDropDown from '../../features/tags/TagsDropDown';
+import TagsDropDown from '../features/tags/TagsDropDown';
 
 const Sidebar = () => {
   return (
-    <aside
-      className="fixed left-0 top-16 z-20 h-screen w-64 -translate-x-full border-r transition-transform lg:translate-x-0"
+    <div
+      className="fixed inset-y-0 bottom-0 left-0 top-16 z-20 hidden w-[250px] flex-col justify-between bg-foreground md:flex"
       aria-label="Sidebar"
     >
       <div className="h-full overflow-y-auto bg-white px-3 py-4">
         <ul className="space-y-2 font-medium">
           <li>
             <NavLink to="/" className="sideMenuItem">
-              <HomeIcon className="h-6 w-6" />
+              <Squares2X2Icon className="h-6 w-6" />
               <span className="ml-3">My Feed</span>
             </NavLink>
           </li>
@@ -28,7 +28,7 @@ const Sidebar = () => {
             <NavLink to="/inbox" className="sideMenuItem">
               <InboxIcon className="h-6 w-6" />
               <span className="ml-3 flex-1 whitespace-nowrap">Inbox</span>
-              <span className="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-secondary-color p-3 text-sm font-medium text-primary-color">
+              <span className="bg-secondary-color text-primary-color ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">
                 3
               </span>
             </NavLink>
@@ -72,7 +72,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-    </aside>
+    </div>
   );
 };
 

@@ -8,9 +8,9 @@ import {
   StarIcon as FilledStarIcon,
   BookmarkIcon as FilledBookmarkIcon,
 } from '@heroicons/react/24/solid';
-import { currentUser } from '../../common/constants/sample';
+import { currentUser } from '../../constants/sample';
 import { Snippet } from '../../app/common.types';
-import { formatDate } from '../../common/utils/formatDate';
+import { formatDate } from '../../lib/formatDate';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
 
@@ -23,9 +23,9 @@ const SnippetCard = (props: Snippet) => {
   }, []);
 
   return (
-    <div className="flex max-w-full cursor-pointer flex-col gap-3 rounded-md border bg-white p-5 hover:shadow-md">
+    <div className="flex w-full max-w-[700px] flex-col gap-3 rounded-xl border bg-foreground p-4 text-text">
       <h3 className="text-2xl font-semibold">{props.title}</h3>
-      <div className="flex gap-5">
+      <div className="flex gap-2">
         <div>
           <img
             src={props.user?.avatar_url}
@@ -43,7 +43,7 @@ const SnippetCard = (props: Snippet) => {
       <div>
         <p>{props.description}</p>
       </div>
-      <div className="flexStart gap-2 text-accent-color">
+      <div className="flexStart text-accent-color gap-2">
         {props.tags?.map((tag) => (
           <span key={tag.id}>#{tag.name}</span>
         ))}
@@ -79,7 +79,7 @@ const SnippetCard = (props: Snippet) => {
           className="flexCenter rounded-lg bg-gray-100 p-3 text-gray-500 transition hover:shadow-md hover:ring-1"
         >
           {bookmarked ? (
-            <FilledBookmarkIcon className="h-6 w-6 text-accent-color" />
+            <FilledBookmarkIcon className="text-accent-color h-6 w-6" />
           ) : (
             <BookmarkIcon className="h-6 w-6" />
           )}

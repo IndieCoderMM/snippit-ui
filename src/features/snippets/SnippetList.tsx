@@ -3,9 +3,9 @@ import SnippetCard from './SnippetCard';
 
 const SnippetList = ({ snippets }: { snippets: Snippet[] }) => {
   return (
-    <div className="mx-auto grid w-full gap-5 py-10 sm:max-w-2xl">
+    <div className="flex w-full flex-col gap-2 py-10 md:gap-5">
       {snippets.map((item) => (
-        <div className="overflow-hidden  p-2" key={item.id}>
+        <div className="p-2" key={item.id}>
           <SnippetCard {...item} />
         </div>
       ))}

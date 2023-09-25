@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body,
+  html {
+    @apply bg-background text-foreground;
+    height: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .maxContainer {
+    @apply mx-auto max-w-[1440px] px-8 sm:px-16;
+  }
+}
+
+@layer utilities {
+  .padding {
+    @apply px-8 py-12 sm:px-16 sm:py-24;
+  }
+
+  .xPadding {
+    @apply px-8 sm:px-16;
+  }
+
+  .yPadding {
+    @apply py-12 sm:py-24;
+  }
+
+  .lPadding {
+    @apply pl-8 sm:pl-16;
+  }
+
+  .rPadding {
+    @apply pr-8 sm:pr-16;
+  }
+
+  .tPadding {
+    @apply pt-12 sm:pt-24;
+  }
+
+  .bPadding {
+    @apply pb-12 sm:pb-24;
+  }
+
+  .innerWidth {
+    @apply w-[100%] lg:w-[80%];
+  }
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+
+  .flexStart {
+    @apply flex items-center justify-start;
+  }
+
+  .formInput {
+    @apply w-full rounded-xl bg-gray-100 p-4 outline-0;
+  }
+
+  .submitBtn {
+    @apply w-full max-w-[300px] rounded-xl bg-primary p-4 text-lg font-bold  shadow-sm hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 12px;
+}
+
+.sideMenuItem {
+  @apply flex items-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+.sideMenuItem.active {
+  @apply bg-primary text-white;
+}
+
+.sideDropItem {
+  @apply flex w-full items-center rounded-lg p-2 pl-11 text-primary transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700;
+}
